@@ -10,11 +10,16 @@
     --text-main: #0f172a;
     --text-muted: #475569;
 
+    /* 🔥 NEW */
+    --input-text: #0f172a;
+    --input-bg: rgba(255, 255, 255, 0.85);
+
     --glass-border: rgba(0, 0, 0, 0.1);
 
     --error: #ef4444;
     --success: #22c55e;
 }
+
 
 /* DARK MODE */
 body.dark {
@@ -23,6 +28,10 @@ body.dark {
 
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
+
+    /* 🔥 NEW */
+    --input-text: #f8fafc;
+    --input-bg: rgba(15, 23, 42, 0.6);
 
     --glass-border: rgba(255, 255, 255, 0.1);
 }
@@ -90,13 +99,18 @@ input,
 select {
     width: 100%;
     padding: 12px;
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--input-bg);
     border: 1px solid var(--glass-border);
     border-radius: 8px;
-    color: white;
+    color: var(--input-text);
     outline: none;
-    transition: border-color 0.3s;
+    transition: border-color 0.3s, background 0.3s;
 }
+
+input::placeholder {
+    color: var(--text-muted);
+}
+
 
 input:focus {
     border-color: var(--primary);
